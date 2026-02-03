@@ -4,11 +4,12 @@ import '../inpages-src/mainboard.css';
 import { useState, useEffect } from "react";
 
 const Mainboard = () => {
+  const API_URL = process.env.BACKEND_PORT;
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3001/auth", {
+    fetch(`${API_URL}/auth`, {
       credentials: "include",
     })
       .then((res) => {

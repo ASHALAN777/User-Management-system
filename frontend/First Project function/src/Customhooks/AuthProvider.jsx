@@ -8,11 +8,13 @@ export const AuthContext = createContext({
 });
 
 function AuthProvider({ children }) {
+  
+  const API_URL = process.env.BACKEND_PORT;
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3001/auth/me", { credentials: "include" })
+    fetch(`${API_URL}/auth/me`, { credentials: "include" })
       .then((res) => {
         if (!res.ok) throw new Error("Unauthenticated");
         return res.json();

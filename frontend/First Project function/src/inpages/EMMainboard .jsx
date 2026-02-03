@@ -7,13 +7,14 @@ import { AuthContext } from "../Customhooks/AuthProvider";
 import { useState, useEffect } from "react";
 
 const EMMainboard = () => {
+  const API_URL = process.env.BACKEND_PORT;
   const { user, loading } = useContext(AuthContext);
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const res = await fetch("http://localhost:3001/auth/me", {
+        const res = await fetch(`${API_URL}/auth/me`, {
           method: "GET",
           credentials: "include", //
           headers: {
@@ -58,7 +59,7 @@ const EMMainboard = () => {
   
 
     try {
-       const res = await fetch(`http://localhost:3001/auth/leave/${user._id}/apply`, {
+       const res = await fetch(`${API_URL}/auth/leave/${user._id}/apply`, {
           method: "POST",
           credentials: "include", //
           headers: {

@@ -8,6 +8,7 @@ import{ useNavigate }from "react-router-dom"
 
 
 export default function Navbar() {
+  const API_URL = process.env.BACKEND_PORT;
   
   const { user, loading } = useContext(AuthContext);
    if (loading) return null;
@@ -17,7 +18,7 @@ export default function Navbar() {
   
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:3001/auth/logout", {
+      await fetch(`${API_URL}/auth/logout`, {
         method: "POST",
         credentials: "include",
       });

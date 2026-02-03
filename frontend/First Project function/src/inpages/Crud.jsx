@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "../inpages-src/Editor.css";
 import Swal from "sweetalert2";
 
+
+ const API_URL = process.env.BACKEND_PORT;
 /* ---------- SweetAlert setup ---------- */
 const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
@@ -51,7 +53,7 @@ const approvepop = async (user, setRefreshKey) => {
   if (!result.isConfirmed) return;
 
   try {
-    const res = await fetch(`http://localhost:3001/auth/leave/${user._id}`, {
+    const res = await fetch(`${API_URL}/auth/leave/${user._id}`, {
       method: "PATCH",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -98,7 +100,7 @@ const rejectpop = async (user, setRefreshKey) => {
   if (!result.isConfirmed) return;
 
   try {
-    const res = await fetch(`http://localhost:3001/auth/leave/${user._id}`, {
+    const res = await fetch(`${API_URL}/auth/leave/${user._id}`, {
       method: "PATCH",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -138,7 +140,7 @@ const Editor = () => {
   useEffect(() => {
     setLoading(true);
 
-    fetch("http://localhost:3001/auth/", {
+    fetch(`${API_URL}/auth/`, {
       credentials: "include",
     })
       .then((res) => {

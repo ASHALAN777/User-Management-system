@@ -6,6 +6,7 @@ const EMProfile = () => {
   const { user, loading } = useContext(AuthContext);
   const [editing, setEditing] = useState(false);
   const [saving, setSaving] = useState(false);
+  const API_URL = process.env.BACKEND_PORT;
   const [formData, setFormData] = useState({
     name: "",
     Number: "",
@@ -36,7 +37,7 @@ const EMProfile = () => {
   const handleSave = async () => {
     try {
       setSaving(true);
-      const res = await fetch(`http://localhost:3001/auth/update/${user._id}`, {
+      const res = await fetch(`${API_URL}/auth/update/${user._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -9,6 +9,7 @@ import { AuthContext } from "../Customhooks/AuthProvider.jsx";
 function Login() {
   const navigate = useNavigate();
   const { Login: authLogin } = useContext(AuthContext);
+  const API_URL = process.env.BACKEND_PORT;
   const [login, setLogin] = useState({
     email: "",
     password: "",
@@ -37,7 +38,7 @@ function Login() {
     setIsLoading(true); // Start loading
 
     try {
-      const response = await fetch("http://localhost:3001/auth/login", {
+      const response = await fetch(`${API_URL}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
