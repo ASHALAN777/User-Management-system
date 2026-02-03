@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 // ✅ CORS FIRST
 app.use(
   cors({
-    origin: "http://localhost:5173", // EXACT frontend URL
+    origin: `${front_url}`, // EXACT frontend URL
     credentials: true,               // allow cookies
   })
 );
