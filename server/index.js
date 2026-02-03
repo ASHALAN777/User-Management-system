@@ -7,6 +7,7 @@ require("./middleware/Cronjob");
 
 
 const AuthRouter = require("./Routes/Router");
+const frontend_url = process.env.FRONTEND_URL;
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -14,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 // ✅ CORS FIRST
 app.use(
   cors({
-    origin: `${front_url}`, // EXACT frontend URL
+    origin: `${frontend_url}`, // EXACT frontend URL
     credentials: true,               // allow cookies
   })
 );
