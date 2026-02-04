@@ -38,12 +38,6 @@ function Login() {
     setIsLoading(true); // Start loading
 
     try {
-<<<<<<< HEAD
-      const response = await fetch(`${API_URL}/auth/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-=======
       const response = await fetch(
         `${API_URL}/api/auth/login`,
         {
@@ -53,11 +47,8 @@ function Login() {
           },
           credentials: "include", // Important for cookies/sessions
           body: JSON.stringify(login),
->>>>>>> ab1750914f320ddb2eb53995b13dae62dd500f7a
         },
-        credentials: "include", // Important for cookies/sessions
-        body: JSON.stringify(login),
-      });
+      );
 
       const data = await response.json();
 
