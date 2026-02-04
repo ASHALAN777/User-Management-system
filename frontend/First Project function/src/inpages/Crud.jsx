@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../inpages-src/Editor.css";
 import Swal from "sweetalert2";
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 /* ---------- SweetAlert setup ---------- */
 const swalWithBootstrapButtons = Swal.mixin({
   customClass: {

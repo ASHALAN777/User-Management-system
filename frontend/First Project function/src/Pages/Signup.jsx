@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Signup() {
   const navigate = useNavigate();
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const [signup, setSignup] = useState({
     name: "",
     email: "",
@@ -35,7 +35,7 @@ function Signup() {
     }
 
     try {
-      const response = await fetch( `${API_URL}/auth/signup`, {
+      const response = await fetch(`${API_URL}/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

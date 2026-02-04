@@ -6,7 +6,7 @@ const Profile = () => {
   const { user, loading } = useContext(AuthContext);
   const [editing, setEditing] = useState(false);
   const [saving, setSaving] = useState(false);
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   const [formData, setFormData] = useState({
     name: "",
     Number: "",
