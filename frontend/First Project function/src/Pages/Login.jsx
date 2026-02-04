@@ -39,7 +39,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        "https://user-management-system-4gq7.vercel.app/auth/login",
+        "https://user-management-system-4gq7.vercel.app/api/auth/login",
         {
           method: "POST",
           headers: {

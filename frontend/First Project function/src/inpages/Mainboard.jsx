@@ -9,7 +9,7 @@ const Mainboard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${API_URL}/auth`, {
+    fetch(`${API_URL}/api/auth`, {
       credentials: "include",
     })
       .then((res) => {

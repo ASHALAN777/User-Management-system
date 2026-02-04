@@ -37,7 +37,7 @@ const EMProfile = () => {
   const handleSave = async () => {
     try {
       setSaving(true);
-      const res = await fetch(`${API_URL}/auth/update/${user._id}`, {
+      const res = await fetch(`${API_URL}/api/auth/update/${user._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

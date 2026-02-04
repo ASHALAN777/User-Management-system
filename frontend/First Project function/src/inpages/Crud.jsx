@@ -52,7 +52,7 @@ const approvepop = async (user, setRefreshKey) => {
   if (!result.isConfirmed) return;
 
   try {
-    const res = await fetch(`${API_URL}/auth/leave/${user._id}`, {
+    const res = await fetch(`${API_URL}/api/auth/leave/${user._id}`, {
       method: "PATCH",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -99,7 +99,7 @@ const rejectpop = async (user, setRefreshKey) => {
   if (!result.isConfirmed) return;
 
   try {
-    const res = await fetch(`${API_URL}/auth/leave/${user._id}`, {
+    const res = await fetch(`${API_URL}/api/auth/leave/${user._id}`, {
       method: "PATCH",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -139,7 +139,7 @@ const Editor = () => {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`${API_URL}/auth/`, {
+    fetch(`${API_URL}/api/auth/`, {
       credentials: "include",
     })
       .then((res) => {

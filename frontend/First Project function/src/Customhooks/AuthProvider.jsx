@@ -13,7 +13,7 @@ function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${API_URL}/auth/me`, { credentials: "include" })
+    fetch(`${API_URL}/api/auth/me`, { credentials: "include" })
       .then((res) => {
         if (!res.ok) throw new Error("Unauthenticated");
         return res.json();
