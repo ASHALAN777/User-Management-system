@@ -8,8 +8,7 @@ export const AuthContext = createContext({
 });
 
 function AuthProvider({ children }) {
-  
-  const API_URL = process.env.BACKEND_PORT;
+  const API_URL = process.env.REACT_APP_API_URL;
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -33,10 +32,10 @@ function AuthProvider({ children }) {
 
   const Login = (userData) => {
     setUser(userData);
-  }
+  };
 
   return (
-    <AuthContext.Provider value={{ user, loading ,Login}}>
+    <AuthContext.Provider value={{ user, loading, Login }}>
       {children}
     </AuthContext.Provider>
   );

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "../css/Signup.css";
-import { Link , useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Signup() {
-    const navigate = useNavigate();
-    const API_URL = process.env.BACKEND_PORT;
+  const navigate = useNavigate();
+  const API_URL = process.env.REACT_APP_API_URL;
   const [signup, setSignup] = useState({
     name: "",
     email: "",
@@ -48,23 +48,19 @@ function Signup() {
       if (!response.ok) {
         toast.error(data.message || "Signup failed");
         return;
-
       }
       toast.success("Signup successful");
-       setTimeout(() => {
-       navigate("/login");
-         }, 1200);
-        
-       setSignup({
+      setTimeout(() => {
+        navigate("/login");
+      }, 1200);
+
+      setSignup({
         name: "",
         email: "",
         password: "",
         role: "",
       });
-      
-    } 
-    
-    catch (error) {
+    } catch (error) {
       toast.error("Server error");
     }
   };

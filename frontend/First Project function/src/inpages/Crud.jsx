@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../inpages-src/Editor.css";
 import Swal from "sweetalert2";
 
-
- const API_URL = process.env.BACKEND_PORT;
+const API_URL = process.env.REACT_APP_API_URL;
 /* ---------- SweetAlert setup ---------- */
 const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
@@ -196,20 +195,34 @@ const Editor = () => {
           </thead>
           <tbody>
             {employeeUsers.map((user, index) => {
-              const recentLeave = user.leaves && user.leaves.length > 0 
-                ? user.leaves[user.leaves.length - 1] 
-                : null;
-                return (
-              <tr key={user._id}>
-                <td>{index + 1}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{new Date(recentLeave?.leavedate).toLocaleDateString("en-GB")}</td>
-                 <td>{new Date(recentLeave?.leavefromdate).toLocaleDateString("en-GB")}</td>
-                  <td>{new Date(recentLeave?.leavetodate).toLocaleDateString("en-GB")}</td>
-                <td>{LeaveUpdate(user)}</td>
-              </tr> )
-})}
+              const recentLeave =
+                user.leaves && user.leaves.length > 0
+                  ? user.leaves[user.leaves.length - 1]
+                  : null;
+              return (
+                <tr key={user._id}>
+                  <td>{index + 1}</td>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>
+                    {new Date(recentLeave?.leavedate).toLocaleDateString(
+                      "en-GB",
+                    )}
+                  </td>
+                  <td>
+                    {new Date(recentLeave?.leavefromdate).toLocaleDateString(
+                      "en-GB",
+                    )}
+                  </td>
+                  <td>
+                    {new Date(recentLeave?.leavetodate).toLocaleDateString(
+                      "en-GB",
+                    )}
+                  </td>
+                  <td>{LeaveUpdate(user)}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

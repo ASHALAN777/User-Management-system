@@ -9,7 +9,7 @@ import { AuthContext } from "../Customhooks/AuthProvider.jsx";
 function Login() {
   const navigate = useNavigate();
   const { Login: authLogin } = useContext(AuthContext);
-  const API_URL = process.env.BACKEND_PORT;
+  const API_URL = process.env.REACT_APP_API_URL;
   const [login, setLogin] = useState({
     email: "",
     password: "",

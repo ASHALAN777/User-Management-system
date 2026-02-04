@@ -6,7 +6,7 @@ const Profile = () => {
   const { user, loading } = useContext(AuthContext);
   const [editing, setEditing] = useState(false);
   const [saving, setSaving] = useState(false);
-  const API_URL = process.env.BACKEND_PORT;
+  const API_URL = process.env.REACT_APP_API_URL;
   const [formData, setFormData] = useState({
     name: "",
     Number: "",
@@ -41,9 +41,8 @@ const Profile = () => {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          
-
-        },credentials: "include",
+        },
+        credentials: "include",
         body: JSON.stringify({
           name: formData.name,
           Mobile: formData.Number,

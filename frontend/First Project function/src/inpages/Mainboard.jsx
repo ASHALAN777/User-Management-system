@@ -1,10 +1,10 @@
 import React from "react";
-import '../inpages-src/mainboard.css';
+import "../inpages-src/mainboard.css";
 
 import { useState, useEffect } from "react";
 
 const Mainboard = () => {
-  const API_URL = process.env.BACKEND_PORT;
+  const API_URL = process.env.REACT_APP_API_URL;
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -40,13 +40,19 @@ const Mainboard = () => {
               Total Employee
               <div className="Numberu">{employeeUsers.length}</div>
             </div>
-            <div className="Cardu">Leave Count <div className="Numberu">{employeeLeave.length}</div></div>
-            <div className="Cardu">Profile <div className="Numberu">{employeeLeave.length}</div></div>
-            <div className="Cardu">undefined <div className="Numberu">{employeeLeave.length}</div></div>{" "}
+            <div className="Cardu">
+              Leave Count <div className="Numberu">{employeeLeave.length}</div>
+            </div>
+            <div className="Cardu">
+              Profile <div className="Numberu">{employeeLeave.length}</div>
+            </div>
+            <div className="Cardu">
+              undefined <div className="Numberu">{employeeLeave.length}</div>
+            </div>{" "}
           </div>
         </div>
       </div>
-      <div  className="taable-container">
+      <div className="taable-container">
         <div className="hey">
           <div className="table-drapper no-scrollbar">
             <table className="user-table">

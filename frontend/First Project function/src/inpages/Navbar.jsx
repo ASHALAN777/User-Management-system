@@ -2,20 +2,17 @@ import React from "react";
 import "../inpages-src/Navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../Customhooks/AuthProvider";
-import{ useNavigate }from "react-router-dom"
-
-
-
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
-  const API_URL = process.env.BACKEND_PORT;
-  
+  const API_URL = process.env.REACT_APP_API_URL;
+
   const { user, loading } = useContext(AuthContext);
-   if (loading) return null;
-   if (!user) return null;
-  
-  const navigate = useNavigate()
-  
+  if (loading) return null;
+  if (!user) return null;
+
+  const navigate = useNavigate();
+
   const handleLogout = async () => {
     try {
       await fetch(`${API_URL}/auth/logout`, {
@@ -29,21 +26,19 @@ export default function Navbar() {
     }
   };
 
-
-    const titlechange = () => {
-      if(user.role ==="Employee"){
-        return "Employee Dashboard"
-      }else{
-      return "Admin Dashboard"}
+  const titlechange = () => {
+    if (user.role === "Employee") {
+      return "Employee Dashboard";
+    } else {
+      return "Admin Dashboard";
     }
-
-   
+  };
 
   return (
     <nav className="navbar">
       <div className="navbar-content">
         <h1 className="welcome-message">Welcome {user.name}</h1>
-          <h3 className="dashboard-title">{titlechange ()}</h3>
+        <h3 className="dashboard-title">{titlechange()}</h3>
         <button className="logout-btn1" onClick={handleLogout}>
           Logout
         </button>
