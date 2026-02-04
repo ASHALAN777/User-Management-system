@@ -26,7 +26,7 @@ app.use(express.json());
 require("./middleware/Cronjob");
 
 // ✅ THEN routes
-app.use("/auth", AuthRouter);
+app.use("/api/auth", AuthRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
