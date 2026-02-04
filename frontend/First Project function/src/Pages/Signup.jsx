@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Signup() {
   const navigate = useNavigate();
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const API_URL = process.env.VITE_API_URL;
   const [signup, setSignup] = useState({
     name: "",
     email: "",

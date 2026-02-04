@@ -5,7 +5,7 @@ import { AuthContext } from "../Customhooks/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const API_URL = process.env.VITE_API_URL;
 
   const { user, loading } = useContext(AuthContext);
   if (loading) return null;

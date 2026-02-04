@@ -6,7 +6,7 @@ import { AuthContext } from "../Customhooks/AuthProvider";
 import { useState, useEffect } from "react";
 
 const EMMainboard = () => {
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const API_URL = process.env.VITE_API_URL;
   const { user, loading } = useContext(AuthContext);
   const [userData, setUserData] = useState(null);
 

@@ -9,7 +9,7 @@ import { AuthContext } from "../Customhooks/AuthProvider.jsx";
 function Login() {
   const navigate = useNavigate();
   const { Login: authLogin } = useContext(AuthContext);
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const API_URL = process.env.VITE_API_URL;
   const [login, setLogin] = useState({
     email: "",
     password: "",
@@ -38,17 +38,14 @@ function Login() {
     setIsLoading(true); // Start loading
 
     try {
-      const response = await fetch(
-        `${API_URL}/auth/login`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include", // Important for cookies/sessions
-          body: JSON.stringify(login),
+      const response = await fetch(`${API_URL}/auth/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        credentials: "include", // Important for cookies/sessions
+        body: JSON.stringify(login),
+      });
 
       const data = await response.json();
 

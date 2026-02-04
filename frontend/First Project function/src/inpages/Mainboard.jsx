@@ -4,7 +4,7 @@ import "../inpages-src/mainboard.css";
 import { useState, useEffect } from "react";
 
 const Mainboard = () => {
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const API_URL = process.env.VITE_API_URL;
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
