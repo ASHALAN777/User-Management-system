@@ -28,6 +28,6 @@ require("./middleware/Cronjob");
 // ✅ THEN routes
 app.use("/api/auth", AuthRouter);
 
-app.listen(PORT, () => {
-  console.log(`Server running on ${PORT}`);
-});
+module.exports = app;
+
+
