@@ -38,7 +38,7 @@ function Login() {
     setIsLoading(true); // Start loading
 
     try {
-      const response = await fetch(`${API_URL}/auth/login`, {
+      const response = await fetch('https://user-management-system-4gq7.vercel.app/auth/login', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
