@@ -28,5 +28,6 @@ require("./middleware/Cronjob");
 // ✅ THEN routes
 app.use("/api/auth", AuthRouter);
 
-export default app;
+module.exports = app;
+
 
