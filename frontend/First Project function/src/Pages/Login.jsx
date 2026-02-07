@@ -9,7 +9,7 @@ import { AuthContext } from "../Customhooks/AuthProvider.jsx";
 function Login() {
   const navigate = useNavigate();
   const { Login: authLogin } = useContext(AuthContext);
-  const API_URL = process.env.VITE_API_URL;
+  
   const [login, setLogin] = useState({
     email: "",
     password: "",
@@ -39,7 +39,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        `${API_URL}/api/auth/login`,
+        `${process.env.VITE_API_URL}/api/auth/login`,
         {
           method: "POST",
           headers: {
