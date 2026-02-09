@@ -15,7 +15,7 @@ export default function Navbar() {
 
   const handleLogout = async () => {
     try {
-      await fetch(`${API_URL}/api/auth/logout`, {
+      await fetch("https://user-management-system-4gq7.vercel.app/api/auth/logout", {
         method: "POST",
         credentials: "include",
       });

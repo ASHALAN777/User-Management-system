@@ -13,7 +13,7 @@ const EMMainboard = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const res = await fetch(`${API_URL}/api/auth/me`, {
+        const res = await fetch("https://user-management-system-4gq7.vercel.app/api/auth/me", {
           method: "GET",
           credentials: "include", //
           headers: {
@@ -53,7 +53,7 @@ const EMMainboard = () => {
     };
 
     try {
-      const res = await fetch(`${API_URL}/api/auth/leave/${user._id}/apply`, {
+      const res = await fetch(`https://user-management-system-4gq7.vercel.app/api/auth/leave/${user._id}/apply`, {
         method: "POST",
         credentials: "include", //
         headers: {

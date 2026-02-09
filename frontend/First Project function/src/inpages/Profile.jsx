@@ -37,7 +37,7 @@ const Profile = () => {
   const handleSave = async () => {
     try {
       setSaving(true);
-      const res = await fetch(`${API_URL}/api/auth/update/${user._id}`, {
+      const res = await fetch(`https://user-management-system-4gq7.vercel.app/api/auth/update/${user._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

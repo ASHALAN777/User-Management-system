@@ -9,7 +9,7 @@ const Mainboard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${API_URL}/api/auth`, {
+    fetch("https://user-management-system-4gq7.vercel.app/api/auth", {
       credentials: "include",
     })
       .then((res) => {

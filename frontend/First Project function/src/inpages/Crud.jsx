@@ -52,7 +52,7 @@ const approvepop = async (user, setRefreshKey) => {
   if (!result.isConfirmed) return;
 
   try {
-    const res = await fetch(`${API_URL}/api/auth/leave/${user._id}`, {
+    const res = await fetch(`https://user-management-system-4gq7.vercel.app/api/auth/leave/${user._id}`, {
       method: "PATCH",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -99,7 +99,7 @@ const rejectpop = async (user, setRefreshKey) => {
   if (!result.isConfirmed) return;
 
   try {
-    const res = await fetch(`${API_URL}/api/auth/leave/${user._id}`, {
+    const res = await fetch(`https://user-management-system-4gq7.vercel.app/api/auth/leave/${user._id}`, {
       method: "PATCH",
       credentials: "include",
       headers: { "Content-Type": "application/json" },

@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 // ✅ CORS FIRST
 app.use(
   cors({
-    origin: "https://user-management-system-nine-eta.vercel.app", // EXACT frontend URL
+    origin: "https://user-management-system-nine-eta.vercel.app/", // EXACT frontend URL
     credentials: true,               // allow cookies
   })
 );
