@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 // ✅ CORS FIRST
 app.use(
   cors({
-    origin: `${frontend_url}`, // EXACT frontend URL
+    origin: "https://user-management-system-4gq7.vercel.app", // EXACT frontend URL
     credentials: true,               // allow cookies
   })
 );
