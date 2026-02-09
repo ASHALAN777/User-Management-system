@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../inpages/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../Customhooks/AuthProvider";
-import EMSidebar from "../inpages/Employe Sidebar ";
+import EMSidebar from "../inpages/Employe Sidebar";
 
 const Dashboard = () => {
   const { user, loading } = useContext(AuthContext);
