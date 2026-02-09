@@ -13,8 +13,8 @@ import Mainboard from './inpages/Mainboard'
 import AIBOT from './inpages/Ai'
 import Tester from './Pages/Tester'
 import RoleRedirect from './Customhooks/RoleRedirect'
-import EMMainboard from './inpages/EMMainboard '
-import EMProfile from './inpages/Employee Profile '
+import EMMainboard from './inpages/EMMainboard'
+import EMProfile from './inpages/Employee Profile'
 import  EMEditor  from './inpages/employ-crud'
 
 
