@@ -124,7 +124,6 @@ function Login() {
     
 
   );
-  console.log(`API URL: ${process.env.VITE_API_URL}`);
 
 }
 
