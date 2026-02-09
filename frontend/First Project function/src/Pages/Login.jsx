@@ -121,7 +121,11 @@ function Login() {
       {/* ToastContainer configuration */}
       <ToastContainer position="top-right" autoClose={3000} />
     </div>
+    
+
   );
+  console.log("API URL =", import.meta.env.VITE_API_URL);
+
 }
 
 export default Login;
