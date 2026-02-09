@@ -13,7 +13,9 @@ function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`/api/auth/me`, { credentials: "include" })
+    fetch(`https://user-management-system-4gq7.vercel.app/api/auth/me`, {
+      credentials: "include",
+    })
       .then((res) => {
         if (!res.ok) throw new Error("Unauthenticated");
         return res.json();
