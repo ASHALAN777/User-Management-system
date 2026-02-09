@@ -39,7 +39,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        `${process.env.VITE_API_URL}/api/auth/login`,
+       "https://user-management-system-4gq7.vercel.app/api/auth/login",
         {
           method: "POST",
           headers: {
