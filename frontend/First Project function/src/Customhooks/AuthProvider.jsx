@@ -13,7 +13,7 @@ function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://user-management-system-4gq7.vercel.app/api/auth/me`, {
+    fetch("https://user-management-system-4gq7.vercel.app/api/auth/me", {
       credentials: "include",
     })
       .then((res) => {
